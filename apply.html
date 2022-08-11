@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+function endsWith(str, suffix) {
+   return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+</script>
+<style>
+
+* {
+  margin: 0;
+}
+
+.box
+{
+  position:relative;
+  height:29%;
+  width:10%;
+  background:silver;
+  border-radius:8px;
+  box-shadow: 1px 3px;
+  cursor: pointer;
+}
+
+.color {
+  position:relative;
+  width: 100%;
+  background-color: #bfdc37;
+  height: 100px;
+  display: none;
+
+}
+
+#rectanglebox {
+  border: 1px solid;
+  border-radius:7.8px;
+  padding: 5px;
+  width:70%;
+  position:relative;
+  left:13.5%;
+}
+    
+#recboxcontent {
+  float: left;
+  padding: 0 5px;
+  margin: -20px 0 0 30px;
+  background: #fff;
+}
+
+#applying
+{
+  float: right;
+  padding: 0 5px;
+  margin: -12px 130px 0 30px;
+  background: #fff;
+  border-radius:3px;
+  border:none;
+  width:50%;
+  height:36px;
+  cursor: pointer;
+  background-color:#32a5cc;
+}
+
+.npactive {
+  position:relative;
+  height:29%;
+  width:10%;
+  background:white;
+  border-radius:8px;
+  box-shadow: 1px 3px;
+  cursor: pointer;
+}
+
+.inputbox {
+  padding: 0 15px;
+  width:94%;
+  height:44px;
+  box-shadow: 1px 3px;
+  border:none;
+  border-radius:5px;
+}
+
+.submitform
+{
+  background-color:#6db6c7;
+  border:none;
+  border-radius:7px;
+  height:40px;
+  width:98%;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+button.validateform:hover{
+  background-color: #4FAABF;
+  color: white;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.submitform span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.submitform span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.submitform:hover span {
+  padding-right: 25px;
+}
+
+.submitform:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.78); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+.modal-content {
+  position: fixed;
+  overflow-y: auto;
+  top: 10.5%;
+  width:70%;
+  left:15%;
+  border-radius:15px;
+  background-image: url("./visa_files/popupbackground.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+.close {
+  position:fixed;
+  left:80%;
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: gold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  overflow-y: initial;
+  height: 80vh;
+}
+
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {top: 0; opacity: 0}
+  to {top: 10.5%; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 97%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.cofaq {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+  
+</style>
+
+<script type="text/javascript" src="./apply_files/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="./apply_files/js/jquery-ui-1.7.custom.min.js"></script>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<BODY link="grey" alink="grey" vlink="grey">
+<div id="page-container">
+
+<!-- HEADER -->
+<div class="header0">
+<img src="logo.png" align="left" height="69.5px" ><img src="ae_logo.png" height="71.5px" align="right" ><br><br>
+</div>
+<div class="header1">
+&ensp;&ensp;<img src="ae_logo.png" align="left" height="44.5px"><br><br>
+</div>
+<!-- HEADER END -->
+
+
+<!-- NAVBAR -->
+<div id="supernavi">
+<div id="navbar">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a class="active" href="">Services</a>
+<a href="pricing.html">Pricing</a>
+<a href="faq.html">FAQ</a>
+
+<div class="buttonpanel"><button class="onservices_button" onclick="location.href='services.html'" type="button">Online Services</button><button class="uaetourvisa_button" onclick="location.href='visa.html'" type="button">UAE Tourist Visa</button></div>
+
+</div>
+</div>
+<!-- NAVBAR END -->
+
+<div class="buttonpanell"><button class="onservices_button" onclick="location.href='services.html'" type="button">Online Services</button><button class="uaetourvisa_button" onclick="location.href='visa.html'" type="button">UAE Tourist Visa</button><br><br></div>
+
+<!-- THE CONTENT -->
+<div id="content">
+<img src="./apply_files/apply.jpg" height="237px" width="100%" />
+<br><BR><BR>
+<!-- WARNING DONT DISTURB HEADER CONTENT NAVBAR PAGE CONTAINER DIV -->
+
+<center style="position:relative;width:65%;left:15%;color:grey;"><font face="Garamond"><B>SELECT A SERVICE TO OPT</b></font></center><br><br>
+
+<!-- Form For Visa Selection -->
+<!-- Select Visa Type -->
+<div style="position:relative;display:box;clear:both;">
+
+<div style="left:14%;float:left;" class="box" data="blue">
+<center><br><img src="./apply_files/amer.png" width="68px" height="66px" /><br>
+<h6>AMER SERVICES</center><br>
+</div>
+<div style="left:16%;float:left;" class="box" data="red">
+<center><br><img src="./apply_files/emir.png" width="60px" height="49px" /><br><br>
+<h6>EMIRATES ID</center><br>
+</div>
+<div style="left:18%;float:left;" class="box" data="yellow">
+<center><br><img src="./apply_files/healin.png" width="50px" height="50.5px" /><br><br>
+<h6>HEALTH INSURANCE</center><br>
+</div>
+<div style="left:20%;float:left;" class="box" data="green">
+<center><br><img src="./apply_files/transl.png" width="65px" height="40px" /><br><br>
+<h6>TRANSLATION SERVICES</center><br>
+</div>
+<div style="left:22%;float:left;" class="box" data="purple">
+<center><br><img src="./apply_files/dha.png" width="77px" height="69.5px" />
+<h6>DHA</h6></center><br>
+</div>
+<div style="left:24%;float:left;" class="box" data="orange">
+<center><br><img src="./apply_files/docu.png" width="67px" height="60.5px" /><br>
+<h6>ENQUIRY/MISSING DOCUMENTS</center><br>
+</div>
+
+</div>
+<br><br><br><br><br />
+<!-- Select Visa Type END -->
+
+<!-- Controller Boxes -->
+
+<div class="color" id="blue">
+<div id="rectanglebox">
+<h2 align="center">Amer Services</h2><br />
+<form method="POST" name="myForm0" id="myForm0" action="process1.php" enctype="multipart/form-data" />
+Full name of applicant (*) <br><br>
+<input type="text" name="appliname" style="background-image:url(./apply_files/name.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Your Full Name" required/><br><br>
+Full name of sponser (*) <br><br>
+<input type="text" name="sponsname" style="background-image:url(./apply_files/sponsor.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Full Name Of Sponsor" required/><br><br>
+SPONSOR EMAIL ID (*) <br><br>
+<input type="email" name="sponsid" style="background-image:url(./apply_files/mail.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Id" required/><br><br>
+SPONSOR NUMBER (*) <br><br>
+<input type="text" name="sponscontact" style="background-image:url(./apply_files/flag.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Mobile Number" required/><br><br>
+WHATSAPP NUMBER (*) <br><br>
+<input type="text" name="sponswhatsapp" style="background-image:url(./apply_files/flag.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Whatsapp Number" required/><br><br>
+ACCOUNT IBAN NUMBER (*) <br><br>
+<input type="text" name="acibanno" style="background-image:url(./apply_files/hash.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Account IBAN No." required/><br><br>
+INSIDE OR OUTSIDE ? <br><br>
+<select name="inorout" style="padding: 0 15px;width:97.5%;height:44px;box-shadow: 1px 3px;border:none;border-radius:5px;" required/>
+<option value="" selected>Select an item</option>
+<option value="inside">Inside</option>
+<option value="outside">Outside</option>
+</select><br><br><br>
+ATTACH YOUR FILES HERE:<br>
+<div style="position:relative;display:block;width:97%;border:none;background:#b3b3b3;" onclick="images0warner()">
+<input type="file" id="images0" style="display:none;" name="images0files[]" onchange="preview_images0();" required multiple>
+<br><center><font size="2px">Click here for uploading the files</font></center>
+<h5 align="center">Selected Files:</h5>
+<div style="position:relative;" id="images0List"><br /></div>
+<script>
+function preview_images0() {
+  var uploadPhot = document.getElementById('images0');
+  //uploadPhot.files: FileList
+  for (var ip = 0; ip < uploadPhot.files.length; ip++) {
+       var fp = uploadPhot.files[ip];
+       if (!endsWith(fp.name, 'jpg') && !endsWith(fp.name,'jpeg')) {    
+           alert(fp.name + " is not a valid file! Only JPG/JPEG allowed");
+           document.getElementById('images0List').innerHTML="";
+           document.getElementById('images0').value="";
+           return false;
+       }
+  }
+  document.getElementById("photo-preview").innerHTML = "";
+  var total_photo=document.getElementById("images0").files.length;
+  for(var i=0;i<total_photo;i++)
+  {
+   document.getElementById("photo-preview").innerHTML += "<img class='img-responsive' src='"+URL.createObjectURL(event.target.files[i])+"' width='130px' height='100px'>";
+  }
+  updateList0();
+  displaymodal();
+}
+updateList0 = function() {
+    var input = document.getElementById('images0');
+    var output = document.getElementById('images0List');
+    var children = "";
+    for (var j = 0; j < input.files.length; ++j) {
+        children += '<li>' + input.files.item(j).name + '</li>';
+    }
+    output.innerHTML = '<ul>'+children+'</ul>';
+}
+</script>
+<script>
+function images0warner()
+{
+alert("Upload all your files in single click. Clicking on this box again will replace previously uploaded file. In order to change the selected uploaded file click this box again for reselecting all the files.");
+document.getElementById('images0').click();
+}
+</script>
+</div>
+<input type="hidden" name="servicetype" value="Amer Service" />
+<br><br>
+<button class="submitform" id="submitform" type="submit" onclick="validateForm0()" /><span>NEXT STEP </span></button>
+</form>
+</div>
+</div>
+
+<div class="color" id="red">
+<div id="rectanglebox">
+<h2 align="center">Emirates ID</h2><br />
+<form method="POST" name="myForm1" id="myForm1" action="process1.php" enctype="multipart/form-data" />
+Full name of applicant (*) <br><br>
+<input type="text" name="appliname" style="background-image:url(./apply_files/name.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Your Full Name" required/><br><br>
+Full name of sponser (*) <br><br>
+<input type="text" name="sponsname" style="background-image:url(./apply_files/sponsor.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Full Name Of Sponsor" required/><br><br>
+SPONSOR EMAIL ID (*) <br><br>
+<input type="text" name="sponsid" style="background-image:url(./apply_files/mail.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Id" required/><br><br>
+SPONSOR NUMBER (*) <br><br>
+<input type="text" name="sponscontact" style="background-image:url(./apply_files/flag.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Mobile Number" required/><br><br>
+WHATSAPP NUMBER (*) <br><br>
+<input type="text" name="sponswhatsapp" style="background-image:url(./apply_files/flag.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Whatsapp Number" required/><br><br>
+ACCOUNT IBAN NUMBER (*) <br><br>
+<input type="text" name="acibanno" style="background-image:url(./apply_files/hash.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Account IBAN No." required/><br><br>
+INSIDE OR OUTSIDE ? <br><br>
+<select name="inorout" style="padding: 0 15px;width:97.5%;height:44px;box-shadow: 1px 3px;border:none;border-radius:5px;" required/>
+<option value="" selected>Select an item</option>
+<option value="inside">Inside</option>
+<option value="outside">Outside</option>
+</select><br><br><br>
+ATTACH YOUR FILES HERE:<BR>
+<div style="position:relative;display:block;width:97%;border:none;background:#b3b3b3;" onclick="images1warner()">
+<input type="file" id="images1" style="display:none;" name="images1files[]" onchange="preview_images1();" required multiple>
+<br><center><font size="2px">Click here for uploading the files</font></center>
+<h5 align="center">Selected Files:</h5>
+<div style="position:relative;" id="images1List"><br /></div>
+<script>
+function preview_images1() {
+  var uploadPhot = document.getElementById('images1');
+  //uploadPhot.files: FileList
+  for (var ip = 0; ip < uploadPhot.files.length; ip++) {
+       var fp = uploadPhot.files[ip];
+       if (!endsWith(fp.name, 'jpg') && !endsWith(fp.name,'jpeg')) {    
+           alert(fp.name + " is not a valid file! Only JPG/JPEG allowed");
+           document.getElementById('images1List').innerHTML="";
+           document.getElementById('images1').value="";
+           return false;
+       }
+  }
+  document.getElementById("photo-preview").innerHTML = "";
+  var total_photo=document.getElementById("images1").files.length;
+  for(var i=0;i<total_photo;i++)
+  {
+   document.getElementById("photo-preview").innerHTML += "<img class='img-responsive' src='"+URL.createObjectURL(event.target.files[i])+"' width='130px' height='100px'>";
+  }
+  updateList1();
+  displaymodal();
+}
+updateList1 = function() {
+    var input = document.getElementById('images1');
+    var output = document.getElementById('images1List');
+    var children = "";
+    for (var j = 0; j < input.files.length; ++j) {
+        children += '<li>' + input.files.item(j).name + '</li>';
+    }
+    output.innerHTML = '<ul>'+children+'</ul>';
+}
+</script>
+<script>
+function images1warner()
+{
+alert("Upload all your files in single click. Clicking on this box again will replace previously uploaded file. In order to change the selected uploaded file click this box again for reselecting all the files.");
+document.getElementById('images1').click();
+}
+</script>
+</div>
+<input type="hidden" name="servicetype" value="Emirates ID" />
+<br><br>
+<button class="submitform" id="submitform" type="submit" onclick="validateForm1()" /><span>NEXT STEP </span></button>
+</form>
+</div>
+</div>
+
+<div class="color" id="yellow">
+<div id="rectanglebox">
+<h2 align="center">Health Insurance</h2><br />
+<form method="POST" name="myForm2" id="myForm2" action="process1.php" enctype="multipart/form-data" />
+Full name of applicant (*) <br><br>
+<input type="text" name="appliname" style="background-image:url(./apply_files/name.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Your Full Name" required/><br><br>
+Full name of sponser (*) <br><br>
+<input type="text" name="sponsname" style="background-image:url(./apply_files/sponsor.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Full Name Of Sponsor" required/><br><br>
+SPONSOR EMAIL ID (*) <br><br>
+<input type="text" name="sponsid" style="background-image:url(./apply_files/mail.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Id" required/><br><br>
+SPONSOR NUMBER (*) <br><br>
+<input type="text" name="sponscontact" style="background-image:url(./apply_files/flag.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Mobile Number" required/><br><br>
+WHATSAPP NUMBER (*) <br><br>
+<input type="text" name="sponswhatsapp" style="background-image:url(./apply_files/flag.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Whatsapp Number" required/><br><br>
+ACCOUNT IBAN NUMBER (*) <br><br>
+<input type="text" name="acibanno" style="background-image:url(./apply_files/hash.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Account IBAN No." required/><br><br>
+INSIDE OR OUTSIDE ? <br><br>
+<select name="inorout" style="padding: 0 15px;width:97.5%;height:44px;box-shadow: 1px 3px;border:none;border-radius:5px;" required/>
+<option value="" selected>Select an item</option>
+<option value="inside">Inside</option>
+<option value="outside">Outside</option>
+</select><br><br><br>
+ATTACH YOUR FILES HERE:<BR>
+<div style="position:relative;display:block;width:97%;border:none;background:#b3b3b3;" onclick="images2warner()">
+<input type="file" id="images2" style="display:none;" name="images2files[]" onchange="preview_images2();" required multiple>
+<br><center><font size="2px">Click here for uploading the files</font></center>
+<h5 align="center">Selected Files:</h5>
+<div style="position:relative;" id="images2List"><br /></div>
+<script>
+function preview_images2() {
+  var uploadPhot = document.getElementById('images2');
+  //uploadPhot.files: FileList
+  for (var ip = 0; ip < uploadPhot.files.length; ip++) {
+       var fp = uploadPhot.files[ip];
+       if (!endsWith(fp.name, 'jpg') && !endsWith(fp.name,'jpeg')) {    
+           alert(fp.name + " is not a valid file! Only JPG/JPEG allowed");
+           document.getElementById('images2List').innerHTML="";
+           document.getElementById('images2').value="";
+           return false;
+       }
+  }
+  document.getElementById("photo-preview").innerHTML = "";
+  var total_photo=document.getElementById("images2").files.length;
+  for(var i=0;i<total_photo;i++)
+  {
+   document.getElementById("photo-preview").innerHTML += "<img class='img-responsive' src='"+URL.createObjectURL(event.target.files[i])+"' width='130px' height='100px'>";
+  }
+  updateList2();
+  displaymodal();
+}
+updateList2 = function() {
+    var input = document.getElementById('images2');
+    var output = document.getElementById('images2List');
+    var children = "";
+    for (var j = 0; j < input.files.length; ++j) {
+        children += '<li>' + input.files.item(j).name + '</li>';
+    }
+    output.innerHTML = '<ul>'+children+'</ul>';
+}
+</script>
+<script>
+function images2warner()
+{
+alert("Upload all your files in single click. Clicking on this box again will replace previously uploaded file. In order to change the selected uploaded file click this box again for reselecting all the files.");
+document.getElementById('images2').click();
+}
+</script>
+</div>
+<input type="hidden" name="servicetype" value="Health Insurance" />
+<br><br>
+<button class="submitform" id="submitform" type="submit" onclick="validateForm2()" /><span>NEXT STEP </span></button>
+</form>
+</div>
+</div>
+
+<div class="color" id="green">
+<div id="rectanglebox">
+<h2 align="center">Translation</h2><br />
+<form method="POST" name="myForm3" id="myForm3" action="process1.php" enctype="multipart/form-data" />
+Full name of applicant (*) <br><br>
+<input type="text" name="appliname" style="background-image:url(./apply_files/name.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Your Full Name" required/><br><br>
+Full name of sponser (*) <br><br>
+<input type="text" name="sponsname" style="background-image:url(./apply_files/sponsor.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Full Name Of Sponsor" required/><br><br>
+SPONSOR EMAIL ID (*) <br><br>
+<input type="text" name="sponsid" style="background-image:url(./apply_files/mail.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Id" required/><br><br>
+SPONSOR NUMBER (*) <br><br>
+<input type="text" name="sponscontact" style="background-image:url(./apply_files/flag.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Mobile Number" required/><br><br>
+WHATSAPP NUMBER (*) <br><br>
+<input type="text" name="sponswhatsapp" style="background-image:url(./apply_files/flag.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Whatsapp Number" required/><br><br>
+ACCOUNT IBAN NUMBER (*) <br><br>
+<input type="text" name="acibanno" style="background-image:url(./apply_files/hash.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Account IBAN No." required/><br><br>
+INSIDE OR OUTSIDE ? <br><br>
+<select name="inorout" style="padding: 0 15px;width:97.5%;height:44px;box-shadow: 1px 3px;border:none;border-radius:5px;" required/>
+<option value="" selected>Select an item</option>
+<option value="inside">Inside</option>
+<option value="outside">Outside</option>
+</select><br><br><br>
+ATTACH YOUR FILES HERE:<BR>
+<div style="position:relative;display:block;width:97%;border:none;background:#b3b3b3;" onclick="images3warner()">
+<input type="file" id="images3" style="display:none;" name="images3files[]" onchange="preview_images3();" required multiple>
+<br><center><font size="2px">Click here for uploading the files</font></center>
+<h5 align="center">Selected Files:</h5>
+<div style="position:relative;" id="images3List"><br /></div>
+<script>
+function preview_images3() {
+  var uploadPhot = document.getElementById('images3');
+  //uploadPhot.files: FileList
+  for (var ip = 0; ip < uploadPhot.files.length; ip++) {
+       var fp = uploadPhot.files[ip];
+       if (!endsWith(fp.name, 'jpg') && !endsWith(fp.name,'jpeg')) {    
+           alert(fp.name + " is not a valid file! Only JPG/JPEG allowed");
+           document.getElementById('images3List').innerHTML="";
+           document.getElementById('images3').value="";
+           return false;
+       }
+  }
+  document.getElementById("photo-preview").innerHTML = "";
+  var total_photo=document.getElementById("images3").files.length;
+  for(var i=0;i<total_photo;i++)
+  {
+   document.getElementById("photo-preview").innerHTML += "<img class='img-responsive' src='"+URL.createObjectURL(event.target.files[i])+"' width='130px' height='100px'>";
+  }
+  updateList3();
+  displaymodal();
+}
+updateList3 = function() {
+    var input = document.getElementById('images3');
+    var output = document.getElementById('images3List');
+    var children = "";
+    for (var j = 0; j < input.files.length; ++j) {
+        children += '<li>' + input.files.item(j).name + '</li>';
+    }
+    output.innerHTML = '<ul>'+children+'</ul>';
+}
+</script>
+<script>
+function images3warner()
+{
+alert("Upload all your files in single click. Clicking on this box again will replace previously uploaded file. In order to change the selected uploaded file click this box again for reselecting all the files.");
+document.getElementById('images3').click();
+}
+</script>
+</div>
+<input type="hidden" name="servicetype" value="Translation" />
+<br><br>
+<button class="submitform" id="submitform" type="submit" onclick="validateForm3()" /><span>NEXT STEP </span></button>
+</form>
+</div>
+</div>
+
+<div class="color" id="purple">
+<div id="rectanglebox">
+<h2 align="center">DHA</h2><br />
+<form method="POST" name="myForm4" id="myForm4" action="process1.php" enctype="multipart/form-data" />
+Full name of applicant (*) <br><br>
+<input type="text" name="appliname" style="background-image:url(./apply_files/name.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Your Full Name" required/><br><br>
+Full name of sponser (*) <br><br>
+<input type="text" name="sponsname" style="background-image:url(./apply_files/sponsor.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Full Name Of Sponsor" required/><br><br>
+SPONSOR EMAIL ID (*) <br><br>
+<input type="text" name="sponsid" style="background-image:url(./apply_files/mail.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Id" required/><br><br>
+SPONSOR NUMBER (*) <br><br>
+<input type="text" name="sponscontact" style="background-image:url(./apply_files/flag.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Mobile Number" required/><br><br>
+WHATSAPP NUMBER (*) <br><br>
+<input type="text" name="sponswhatsapp" style="background-image:url(./apply_files/flag.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Whatsapp Number" required/><br><br>
+ACCOUNT IBAN NUMBER (*) <br><br>
+<input type="text" name="acibanno" style="background-image:url(./apply_files/hash.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Account IBAN No." required/><br><br>
+INSIDE OR OUTSIDE ? <br><br>
+<select name="inorout" style="padding: 0 15px;width:97.5%;height:44px;box-shadow: 1px 3px;border:none;border-radius:5px;" required/>
+<option value="" selected>Select an item</option>
+<option value="inside">Inside</option>
+<option value="outside">Outside</option>
+</select><br><br><br>
+ATTACH YOUR FILES HERE:<BR>
+<div style="position:relative;display:block;width:97%;border:none;background:#b3b3b3;" onclick="images4warner()">
+<input type="file" id="images4" style="display:none;" name="images4files[]" onchange="preview_images4();" required multiple>
+<br><center><font size="2px">Click here for uploading the files</font></center>
+<h5 align="center">Selected Files:</h5>
+<div style="position:relative;" id="images4List"><br /></div>
+<script>
+function preview_images4() {
+  var uploadPhot = document.getElementById('images4');
+  //uploadPhot.files: FileList
+  for (var ip = 0; ip < uploadPhot.files.length; ip++) {
+       var fp = uploadPhot.files[ip];
+       if (!endsWith(fp.name, 'jpg') && !endsWith(fp.name,'jpeg')) {    
+           alert(fp.name + " is not a valid file! Only JPG/JPEG allowed");
+           document.getElementById('images4List').innerHTML="";
+           document.getElementById('images4').value="";
+           return false;
+       }
+  }
+  document.getElementById("photo-preview").innerHTML = "";
+  var total_photo=document.getElementById("images4").files.length;
+  for(var i=0;i<total_photo;i++)
+  {
+   document.getElementById("photo-preview").innerHTML += "<img class='img-responsive' src='"+URL.createObjectURL(event.target.files[i])+"' width='130px' height='100px'>";
+  }
+  updateList4();
+  displaymodal();
+}
+updateList4 = function() {
+    var input = document.getElementById('images4');
+    var output = document.getElementById('images4List');
+    var children = "";
+    for (var j = 0; j < input.files.length; ++j) {
+        children += '<li>' + input.files.item(j).name + '</li>';
+    }
+    output.innerHTML = '<ul>'+children+'</ul>';
+}
+</script>
+<script>
+function images4warner()
+{
+alert("Upload all your files in single click. Clicking on this box again will replace previously uploaded file. In order to change the selected uploaded file click this box again for reselecting all the files.");
+document.getElementById('images4').click();
+}
+</script>
+</div>
+<input type="hidden" name="servicetype" value="DHA" />
+<br><br>
+<button class="submitform" id="submitform" type="submit" onclick="validateForm4()" /><span>NEXT STEP </span></button>
+</form>
+</div>
+</div>
+
+<div class="color" id="orange">
+<div id="rectanglebox">
+<h2 align="center">Enquiry/Missing Documents</h2><br />
+<form method="POST" name="myForm5" id="myForm5" action="process1.php" enctype="multipart/form-data" />
+Full name of applicant (*) <br><br>
+<input type="text" name="appliname" style="background-image:url(./apply_files/name.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Your Full Name" required/><br><br>
+Full name of sponser (*) <br><br>
+<input type="text" name="sponsname" style="background-image:url(./apply_files/sponsor.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Full Name Of Sponsor" required/><br><br>
+SPONSOR EMAIL ID (*) <br><br>
+<input type="text" name="sponsid" style="background-image:url(./apply_files/mail.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Id" required/><br><br>
+SPONSOR NUMBER (*) <br><br>
+<input type="text" name="sponscontact" style="background-image:url(./apply_files/flag.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Mobile Number" required/><br><br>
+WHATSAPP NUMBER (*) <br><br>
+<input type="text" name="sponswhatsapp" style="background-image:url(./apply_files/flag.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Sponsor Whatsapp Number" required/><br><br>
+ACCOUNT IBAN NUMBER (*) <br><br>
+<input type="text" name="acibanno" style="background-image:url(./apply_files/hash.png);background-position:right top;background-repeat:no-repeat;background-size: contain;" class="inputbox" placeholder="Enter Account IBAN No." required/><br><br>
+INSIDE OR OUTSIDE ? <br><br>
+<select name="inorout" style="padding: 0 15px;width:97.5%;height:44px;box-shadow: 1px 3px;border:none;border-radius:5px;" required/>
+<option value="" selected>Select an item</option>
+<option value="inside">Inside</option>
+<option value="outside">Outside</option>
+</select><br><br><br>
+ATTACH YOUR FILES HERE:<BR>
+<div style="position:relative;display:block;width:97%;border:none;background:#b3b3b3;" onclick="images5warner()">
+<input type="file" id="images5" style="display:none;" name="images5files[]" onchange="preview_images5();" required multiple>
+<br><center><font size="2px">Click here for uploading the files</font></center>
+<h5 align="center">Selected Files:</h5>
+<div style="position:relative;" id="images5List"><br /></div>
+<script>
+function preview_images5() {
+  var uploadPhot = document.getElementById('images5');
+  //uploadPhot.files: FileList
+  for (var ip = 0; ip < uploadPhot.files.length; ip++) {
+       var fp = uploadPhot.files[ip];
+       if (!endsWith(fp.name, 'jpg') && !endsWith(fp.name,'jpeg')) {    
+           alert(fp.name + " is not a valid file! Only JPG/JPEG allowed");
+           document.getElementById('images5List').innerHTML="";
+           document.getElementById('images5').value="";
+           return false;
+       }
+  }
+  document.getElementById("photo-preview").innerHTML = "";
+  var total_photo=document.getElementById("images5").files.length;
+  for(var i=0;i<total_photo;i++)
+  {
+   document.getElementById("photo-preview").innerHTML += "<img class='img-responsive' src='"+URL.createObjectURL(event.target.files[i])+"' width='130px' height='100px'>";
+  }
+  updateList5();
+  displaymodal();
+}
+updateList5 = function() {
+    var input = document.getElementById('images5');
+    var output = document.getElementById('images5List');
+    var children = "";
+    for (var j = 0; j < input.files.length; ++j) {
+        children += '<li>' + input.files.item(j).name + '</li>';
+    }
+    output.innerHTML = '<ul>'+children+'</ul>';
+}
+</script>
+<script>
+function images5warner()
+{
+alert("Upload all your files in single click. Clicking on this box again will replace previously uploaded file. In order to change the selected uploaded file click this box again for reselecting all the files.");
+document.getElementById('images5').click();
+}
+</script>
+</div>
+<input type="hidden" name="servicetype" value="Enquiry/Missing Documents" />
+<br><br>
+<button class="submitform" id="submitform" type="submit" onclick="validateForm5()" /><span>NEXT STEP </span></button>
+</form>
+</div>
+</div>
+
+<!-- Controller Boxes END -->
+
+
+<br><BR>
+
+
+<!-- INSTRUCTIONS -->
+<div style="position:relative;display:block;clear:both;">
+<H1><font face="Garamond"><U style="text-decoration-line:underline;text-decoration-color:#33adff;">A S</u>tep-by-Step Guide to the Application Process</font></h1><br><br>
+<UL>
+<li class="fa fa-chevron-circle-right" aria-hidden="true"> Fill up the "Applicant's Information ana choose the type of application.</li><br><br>
+<li class="fa fa-chevron-circle-right" aria-hidden="true"> Complete the required details and requirements (2 MB file size max.) and submit accordingly.</li><br><br>
+<li class="fa fa-chevron-circle-right" aria-hidden="true"> You will receive a reference number after completing the request.</li><br><br>
+<li class="fa fa-chevron-circle-right" aria-hidden="true"> Our representative will review your complete documents and notify you of the pickup of the sponsor's Original Emirates ID. Courier will be arrange once the request is confirmed by the customer.</li><br><br>
+<li class="fa fa-chevron-circle-right" aria-hidden="true"> An OTP number will be obtained from SMART AMER to further your application and once completed you will receive a payment link (for payment options, we have an option for bank transfer, credit card, cash deposit all)</li><br><br>
+<li class="fa fa-chevron-circle-right" aria-hidden="true"> For normal application, it takes 3-5 working days prior to the approval from the GDRFA officials (You will be notified thru SMS or email).</li><br><br>
+</ul>
+</div>
+<!-- INSTRUCTIONS END -->
+
+
+<br><BR>
+
+
+<!-- FAQs -->
+<div style="position:relative;display:block;clear:both;">
+<H1><font face="Garamond"><U style="text-decoration-line:underline;text-decoration-color:#33adff;">F</u>AQs</font></h1><br><br>
+<div class="notAnimated animateBlock leftAlign right">
+<div class="collapsible">How to apply Change Status from (Visit /Tourist Visa) in Dubai UAE?</div>
+<div class="cofaq">
+<p>No matter you're on visit or tourist visa, on -arrival national, or a Dubai resident looking to cancel your residence and change it to a tourist visa or change status, this special visa package allows any foreign nationality in Dubai to easily change their visa status without exiting the country. Visa extension or visa change will be possible for those visa holders who are already inside UAE. The Status change should be completed before the expiry of the grace period or visit visa to avoid incurring fines. if you have all the required documents ready, all steps can be completed by visiting Amer Center or Apply Online.</p>
+<p><br>
+<B>PREREQUISITES</b><ul><br>
+<li class="fa fa-chevron-circle-right" aria-hidden="true"> Applicant has already obtained its entry permit residence visa in Dubai.</li></ul>
+<br><B>LIST OF MANDATORY DOCUMENTS:</b><ul><br>
+<li class="fa fa-chevron-circle-right" aria-hidden="true"> Sponsor's Emirates ID (Colour) </li><br>
+<li class="fa fa-chevron-circle-right" aria-hidden="true"> Applicant 's passport (Colour) — valid minimum for 6 months </li><br>
+<li class="fa fa-chevron-circle-right" aria-hidden="true"> Copy of Approved e-visa </li><br>
+<li class="fa fa-chevron-circle-right" aria-hidden="true"> Copy of old tourist/ visit visa/ visa cancellation paper </li><br>
+<li class="fa fa-chevron-circle-right" aria-hidden="true"> Copy of current on arrival stamp or file number (for arrival visa holders) </li></ul></p><br>
+</div>
+</div>
+<BR><BR><BR><BR>
+
+<div class="notAnimated animateBlock leftAlign left">
+<div class="collapsible">How to apply Change Status from (Visit /Tourist Visa) in Dubai UAE?</div>
+<div class="cofaq">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+<BR><BR><BR><BR>
+
+<div class="notAnimated animateBlock leftAlign right">
+<div class="collapsible">How to apply Change Status from (Visit /Tourist Visa) in Dubai UAE?</div>
+<div class="cofaq">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+<BR><BR><BR><BR>
+
+<div class="notAnimated animateBlock leftAlign left">
+<div class="collapsible">How to apply Change Status from (Visit /Tourist Visa) in Dubai UAE?</div>
+<div class="cofaq">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+<BR><BR><BR><BR>
+
+<div class="notAnimated animateBlock leftAlign right">
+<div class="collapsible">How to apply Change Status from (Visit /Tourist Visa) in Dubai UAE?</div>
+<div class="cofaq">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+<BR><BR><BR><BR>
+</div>
+<!-- FAQs END -->
+
+
+<br><BR>
+
+
+<!-- MODAL -->
+<div id="myModal" class="modal">
+
+<div class="modal-content">
+<div class="modal-header">
+<span class="close"><font size="42.5px">&times;&ensp;</font></span>
+</div>
+
+<div class="modal-body">
+<font face="Garamond"><br><br>
+
+<div id="photo-group">
+<h2>Uploaded Photos</h2>
+<div id="photo-preview"></div>
+</div>
+
+</div>
+</div>
+</div>
+<!-- MODAL END -->
+
+
+<!-- Our Partners -->
+<div style="position:relative;clear:left;">
+<BR><BR>
+<BR><BR>
+<HR class="style-eight">
+<BR />
+<div style="position:relative;display:block;left:0%;width:100%;height:50%;">
+<H1 align="center" style="font:29px Algerian;"><B>Our Partners</b></h1>
+
+<center><img class="module" src="dha.png" height="138.5px" width="251.78px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img class="module" src="dubeco.png" height="145.5px" width="250px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img class="module" src="faic.png" height="162.8px" width="287px" /></center>
+
+</div>
+</div>
+<!-- Our Partners END -->
+
+
+<BR><BR>
+<BR><BR>
+
+
+</div>
+<!-- THE CONTENT END -->
+
+
+<!-- THE FOOTER -->
+<div id="footer">
+
+<div style="position:relative;width:32%;left:4.5%;float:left;"><font face="Times New Roman" size="2px"><BR>Smart Amer is a Semi Government Organization, which allows residents to complete all Visa and Residency transaction. Smart AmerCenters were launched by Dubai GDRFA to simplify transactions and increase effciency to achieve customer happiness.<BR><BR><BR>
+<img src="mcardsealed.png" height="27px" width="48.5px" />&ensp;
+<img src="securecode.png" height="25px" width="48px" />&nbsp;
+<img src="visasealed.jpg" height="25px" width="43px" />&nbsp;
+<img src="visaverified.png" height="28px" width="48px" /><br><font face="Times New Roman" size="1.8px"><I>We accept payments online using Visa and MasterCard credit/debit card.</i></font>
+<BR><BR></font></div>
+
+<div style="position:relative;left:10%;width:40%;float:left;">
+<BR><BR>
+<div style="position:relative;left:0%;font-family:Garamond;font-size:12px;">
+<img src="tele.png" height="39px" width="35px" align="center" />&ensp;&ensp;04 265 8666,052 781 8802  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+<img src="locat.png" height="39px" width="35px" align="center" /> Dubai, United Arab Emirates
+</div><br>
+<div style="position:relative;left:-2%;width:65%;font-family:Garamond;font-size:14px;">
+<img src="mail.png" height="69px" width="70px" align="center" />contact@smartamer.ae &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+<img src="fb.png" height="39px" width="35px" align="center"  /><img src="insta.png" height="40px" width="35px" align="center" />
+</div>
+</div>
+
+</div>
+<!-- THE FOOTER END -->
+
+
+</div>
+<!-- END OF PAGE-CONTAINER -->
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var cofaq = this.nextElementSibling;
+    if (cofaq.style.maxHeight){
+      cofaq.style.maxHeight = null;
+    } else {
+      cofaq.style.maxHeight = cofaq.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+<script type="text/javascript" src="script.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.0.js"></script>
+<script>
+$(function() {
+  var $elements = $('.animateBlock.notAnimated'); //contains elements of nonAnimated class
+  var $window = $(window);
+  $window.on('scroll', function(e) {
+    $elements.each(function(i, elem) { //loop through each element
+      if ($(this).hasClass('animated')) // check if already animated
+        return;
+      animateMe($(this));
+    });
+  });
+});
+ 
+function animateMe(elem) {
+  var winTop = $(window).scrollTop(); // calculate distance from top of window
+  var winBottom = winTop + $(window).height();
+  var elemTop = $(elem).offset().top; // element distance from top of page
+  var elemBottom = elemTop + $(elem).height();
+  if ((elemBottom <= winBottom) && (elemTop >= winTop)) {
+    // exchange classes if element visible
+    $(elem).removeClass('notAnimated').addClass('animated');
+  }
+}
+</script>
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+      <script id="rendered-js" >
+(function ($) {
+
+
+  $.fn.visible = function (partial) {
+
+    var $t = $(this),
+    $w = $(window),
+    viewTop = $w.scrollTop(),
+    viewBottom = viewTop + $w.height(),
+    _top = $t.offset().top,
+    _bottom = _top + $t.height(),
+    compareTop = partial === true ? _bottom : _top,
+    compareBottom = partial === true ? _top : _bottom;
+
+    return compareBottom <= viewBottom && compareTop >= viewTop;
+
+  };
+
+})(jQuery);
+
+var win = $(window);
+
+var allMods = $(".module");
+
+allMods.each(function (i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("already-visible");
+  }
+});
+
+win.scroll(function (event) {
+
+  allMods.each(function (i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("come-in");
+    }
+  });
+
+});
+//# sourceURL=pen.js
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script>
+        $(document).ready(function(){
+            $(".box").click(function(){
+                $(".color").css("display", "none");
+                var data = $(this).attr("data");
+                $('.color[id='+data+']').css("display", "inline");
+            });
+        });
+</script>
+
+<script>
+var addclass = 'npactive';
+var $cols = $('.box').click(function(e) {
+    $cols.removeClass(addclass);
+    $(this).addClass(addclass);
+});
+</script>
+
+<script>
+function displaymodal() {
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+modal.style.display = "block";
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+}
+</script>
+
+<script>
+function validateForm0() {
+  if(document.getElementById('images0').files.length == 0) {
+   alert("Upload at least one file");
+   return false;
+}
+}
+
+function validateForm1() {
+  if(document.getElementById('images1').files.length == 0) {
+   alert("Upload at least one file");
+   return false;
+}
+}
+
+function validateForm2() {
+  if(document.getElementById('images2').files.length == 0) {
+   alert("Upload at least one file");
+   return false;
+}
+}
+
+function validateForm3() {
+  if(document.getElementById('images3').files.length == 0) {
+   alert("Upload at least one file");
+   return false;
+}
+}
+
+function validateForm4() {
+  if(document.getElementById('images4').files.length == 0) {
+   alert("Upload at least one file");
+   return false;
+}
+}
+
+function validateForm5() {
+  if(document.getElementById('images5').files.length == 0) {
+   alert("Upload at least one file");
+   return false;
+}
+}
+</script>
+
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
+
+</body>
+</html>

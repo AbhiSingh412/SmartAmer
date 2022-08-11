@@ -1,0 +1,6 @@
+blue -96 hrs visa
+red - 14 days visa
+yellow- 14 days express visa
+green- 30 days visa
+purple- 30 days express visa
+orange- 90 days visa

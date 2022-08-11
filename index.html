@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<TITLE></title>
+<meta name="viewport" content= "width=device-width, user-scalable=no" initial-scale="1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<style>
+
+/* MEDIA QUERIES NO NEED TO SET */
+a {
+   text-decoration: none;
+   color: black;
+}
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 19px 22px;
+  transition: all 0.2s ease;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: white;
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #111;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background:white;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.96);
+}
+
+#mheaderpart {
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.1s
+}
+
+@-webkit-keyframes slideIn {
+  from {top: 0; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {top: 0; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+/* Media Queries for Smartphones */
+@media only screen and (max-width: 768px) {
+  .mwwdtable
+  {
+    display:block;
+    font-family:Times New Roman;
+    font-size:10px;
+  }
+  .wwdtable
+  {
+    display:none;
+  }
+  #flexi
+  {
+    display: flex;
+    flex-direction: column;
+  }
+  .whotxt
+  {
+    position:relative;
+    width:90%;
+    display:block;
+    margin-left:5%;
+    font-size:14.5px;
+    order:1;
+  }
+  .whoboxes
+  {
+     display:none;
+  }
+  .mwhoboxes
+  {
+    position:relative;
+    width:90%;
+    display:block;
+    margin-left:5%;
+    order:2;
+  }
+  .whohding1 {
+    display:none;
+  }
+  .whohding2 {
+    display:block;
+    margin-left:5%;
+  }
+  .wwdhding1
+  {
+    display:block;
+    margin-left:5%;
+  }
+  .wwdhding0
+  {
+    display:none;
+  }
+  .wwdtable
+  {
+    position:relative;
+    width:auto;
+    margin-left:16%;
+  }
+  .pickndrop1
+  {
+    position:relative;
+    clear:left;
+  }
+  .pickndrop0
+  {
+    display:none;
+  }
+  .indexpic1
+  {
+    margin-top:10px;
+    height:500px;
+    width:100%;
+  }
+  .indeximgcontainer1 {
+    position: relative;
+    color:#999999;
+  }
+  .indexpictext1 {
+    position: absolute;
+    top:43%;
+    left:6%;
+    width:90%;
+  }
+  .indeximgcontainer
+  {
+    display:none;
+  }
+  .cardsDo {
+    padding-top: 15px;
+    vertical-align:middle;
+    padding-bottom: 10px;
+    border-radius:8px;
+    background:white;
+    border-style:none;
+    height:50px;
+    display:box;
+    clear:both;
+    overflow:none;
+    /* box-shadow:#dedede 7px 7px; */
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08), 
+              0 2px 2px rgba(0, 0, 0,0.08), 
+              0 4px 4px rgba(0,0,0,0.08), 
+              0 8px 8px rgba(0,0,0,0.08), 
+              0 16px 16px rgba(0,0,0,0.08), 
+              0 32px 32px rgba(0,0,0,0.08);
+
+    margin: 6px;
+  }
+  #can1, #can2, #can3
+  {
+    display:none;
+  }
+  #canbtn
+  {
+    display:block;
+  }
+}
+
+/* Media Queries for Tablet/Phablet/iPads in Landscape Mode */
+@media only screen and (min-width : 769px) and (max-width : 1024px) and (orientation : landscape) {
+  .whotxt 
+  {
+    width:36%;
+    float:left;
+    font-size:14.5px;
+  }
+  .mwwdtable
+  {
+    display:block;
+    font-family:Times New Roman;
+    font-size:10px;
+  }
+  .wwdtable
+  {
+    display:none;
+  }
+  .whoboxes
+  {
+    position:relative;
+    float:right;
+  }
+  .mwhoboxes
+  {
+    display:none;
+  }
+  .whohding2 {
+    display:none;
+  }
+  .whohding1 {
+    display:block;
+  }
+  .wwdhding0
+  {
+    display:block;
+  }
+  .wwdhding1
+  {
+    display:none;
+  }
+  .wwdtable
+  {
+    position:relative;
+    width:70%;
+    margin-left:23.5%;
+  }
+  .pickndrop0
+  {
+    position:relative;
+    clear:left;
+  }
+  .pickndrop1
+  {
+    display:none;
+  }
+  .indexpic
+  {
+    margin-top: 10px;
+    height:390px;
+    width:100%;
+  }
+  .indeximgcontainer {
+    position: relative;
+    color:#999999;
+  }
+  .indexpictext {
+    position: absolute;
+    top:20%;
+    left: 5%;
+    width:37%;
+    font-size:14px;
+  }
+  .indeximgcontainer1
+  {
+    display:none;
+  }
+  .cardsDo {
+    /* border-right:solid #dedede 5px; */
+    padding-top: 15px;
+    vertical-align:middle;
+    padding-bottom: 10px;
+    border-radius:10px;
+    background:white;
+    /* width:250px; */
+    height:50px;
+    display:inline-block;
+    overflow:none;
+    /* box-shadow:#dedede 7px 7px; */
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08), 
+              0 2px 2px rgba(0, 0, 0,0.08), 
+              0 4px 4px rgba(0,0,0,0.08), 
+              0 8px 8px rgba(0,0,0,0.08), 
+              0 16px 16px rgba(0,0,0,0.08), 
+              0 32px 32px rgba(0,0,0,0.08);
+    margin: 6px;
+  }
+  .cardsWho {
+    display:inline-block;
+    position:relative;
+    vertical-align:middle;
+    color:#444;
+    border:1px solid #CCC;
+    border-radius:15px;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    /* cursor:pointer; */
+    width: 190px;
+    height:100px;
+    padding-top: 25px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow:none;
+    margin: 8px;
+    padding-left:14px;
+  }
+  .cardsWho img {
+    float: left;
+    position:relative;
+    /* display:inline-block; */
+  }
+  .cardsWho p {
+    vertical-align:middle;
+    /* display:inline-block; */
+    padding-left:35px;
+    padding-top: 6px;
+    width:90.5%;
+  }
+  .cardsDo p {
+    text-align: center;
+    vertical-align:middle;
+  }
+  .cardDoRow {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    align-content: center;
+  }
+  #canbtn
+  {
+    display:none;
+  }
+}
+
+/* Media Queries for Tablet/iPads in Portrait Mode */
+@media only screen and (min-width : 769px) and (max-width : 1024px) and (orientation : portrait) {
+  .whotxt 
+  {
+    position:relative;
+    width:90%;
+    display:block;
+    margin-left:5%;
+    font-size:14.5px;
+  }
+  .whoboxes
+  {
+    display:none;
+  }
+  .wwdtable
+  {
+    display:block;
+    font-family:Times New Roman;
+    font-size:10px;
+  }
+  .mwwdtable
+  {
+    display:none;
+  }
+  .mwhoboxes
+  {
+    position:relative;
+    width:90%;
+    display:block;
+    margin-left:5%;
+  }
+  .whohding1 {
+    display:none;
+  }
+  .whohding2 {
+    display:block;
+  }
+  .wwdhding1
+  {
+    display:block;
+  }
+  .wwdhding0
+  {
+    display:none;
+  }
+  .wwdtable
+  {
+    position:relative;
+    width:70%;
+    margin-left:23.5%;
+  }
+  .pickndrop1
+  {
+    position:relative;
+    clear:left;
+  }
+  .pickndrop0
+  {
+    display:none;
+  }
+  .indexpic
+  {
+    margin-top: 70px;
+    height:340px;
+    width:100%;
+  }
+  .indeximgcontainer {
+    position: relative;
+    color:#999999;
+  }
+  .indexpictext {
+    position: absolute;
+    top:20%;
+    left: 10%;
+    width:40%;
+    font-size:13px;
+  }
+  .indeximgcontainer
+  {
+    display:none;
+  }
+  .cardsDo {
+    padding-top: 15px;
+    vertical-align:middle;
+    padding-bottom: 10px;
+    border-radius:8px;
+    background:white;
+    border-style:none;
+    height:50px;
+    display:box;
+    clear:both;
+    overflow:none;
+    /* box-shadow:#dedede 7px 7px; */
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08), 
+              0 2px 2px rgba(0, 0, 0,0.08), 
+              0 4px 4px rgba(0,0,0,0.08), 
+              0 8px 8px rgba(0,0,0,0.08), 
+              0 16px 16px rgba(0,0,0,0.08), 
+              0 32px 32px rgba(0,0,0,0.08);
+
+    margin: 6px;
+  }
+  #can1, #can2, #can3
+  {
+    display:none;
+  }
+  #canbtn
+  {
+    display:block;
+  }
+}
+
+/* Media Queries for High-Pixel-Smaller-Screen QHD/4K displays like Larger Palmtop/Macbook/Convertible laptops */
+@media only screen and (min-width : 1025px) and (max-width : 1224px) {
+  .wwdtable
+  {
+    display:block;
+    font-family:Times New Roman;
+    font-size:10px;
+  }
+  .mwwdtable
+  {
+    display:none;
+  }  .whotxt 
+  {
+    width:40%;
+    float:left;
+    font-size:14.5px;
+  }
+  .whoboxes
+  {
+    position:relative;
+    float:right;
+  }
+  .mwhoboxes
+  {
+    display:none;
+  }
+  .whohding1 {
+    display:block;
+  }
+  .whohding2 {
+    display:none;
+  }
+  .wwdhding1
+  {
+    display:none;
+  }
+  .wwdhding0
+  {
+    display:block;
+  }
+  .wwdtable
+  {
+    position:relative;
+    width:70%;
+    margin-left:23.5%;
+  }
+  .pickndrop0
+  {
+    position:relative;
+    clear:left;
+  }
+  .pickndrop1
+  {
+    display:none;
+  }
+  .indexpic
+  {
+    height:350px;
+    width:100%;
+  }
+  .indeximgcontainer {
+    position: relative;
+    color:#999999;
+  }
+  .indexpictext {
+    position: absolute;
+    top:17%;
+    left:8%;
+    width:39.5%;
+    font-size:14px;
+  }
+  .indeximgcontainer1
+  {
+    display:none;
+  }
+  .cardsDo {
+    /* border-right:solid #dedede 5px; */
+    padding-top: 15px;
+    vertical-align:middle;
+    padding-bottom: 10px;
+    border-radius:10px;
+    background:white;
+    /* width:250px; */
+    height:50px;
+    display:inline-block;
+    overflow:none;
+    /* box-shadow:#dedede 7px 7px; */
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08), 
+              0 2px 2px rgba(0, 0, 0,0.08), 
+              0 4px 4px rgba(0,0,0,0.08), 
+              0 8px 8px rgba(0,0,0,0.08), 
+              0 16px 16px rgba(0,0,0,0.08), 
+              0 32px 32px rgba(0,0,0,0.08);
+    margin: 6px;
+  }
+  .cardsWho {
+    display:inline-block;
+    position:relative;
+    vertical-align:middle;
+    color:#444;
+    border:1px solid #CCC;
+    border-radius:15px;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    /* cursor:pointer; */
+    width: 200px;
+    height:120px;
+    padding-top: 35px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow:none;
+    margin: 8px;
+    padding-left:14px;
+  }
+  .cardsWho img {
+    float: left;
+    position:relative;
+    /* display:inline-block; */
+  }
+  .cardsWho p {
+    vertical-align:middle;
+    /* display:inline-block; */
+    padding-left:45px;
+    padding-top: 10px;
+    width:90.5%;
+  }
+  .cardsDo p {
+    text-align: center;
+    vertical-align:middle;
+  }
+  .cardDoRow {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    align-content: center;
+  }
+  #canbtn
+  {
+    display:none;
+  }
+}
+
+/* Media Queries for Desktop/Laptops */
+@media only screen and (min-width : 1225px) {
+  .wwdtable
+  {
+    display:block;
+    font-family:Times New Roman;
+    font-size:10px;
+  }
+  .mwwdtable
+  {
+    display:none;
+  }
+  .indexpic
+  {
+    height:450px;
+    width:100%;
+  }
+  .indeximgcontainer {
+    position: relative;
+    color:#999999;
+  }
+  .indexpictext {
+    position: absolute;
+    top:20%;
+    left:9%;
+    width:27.5%;
+    font-size:14px;
+  }
+  .whotxt 
+  {
+    width:40.5%;
+    float:left;
+    font-size:14.5px;
+  }
+  .whoboxes
+  {
+    position:relative;
+    float:right;
+  }
+  .mwhoboxes
+  {
+    display:none;
+  }
+  .whohding1 {
+    display:block;
+  }
+  .whohding2 {
+    display:none;
+  }
+  .wwdhding1
+  {
+    display:none;
+  }
+  .wwdhding0
+  {
+    display:block;
+  }
+  .wwdtable
+  {
+    position:relative;
+    width:100%;
+    margin-left:3%;
+  }
+  .pickndrop0
+  {
+    position:relative;
+    clear:left;
+  }
+  .pickndrop1
+  {
+    display:none;
+  }
+  .indeximgcontainer1
+  {
+    display:none;
+  }
+  .cardsDo {
+    /* border-right:solid #dedede 5px; */
+    padding-top: 15px;
+    vertical-align:middle;
+    padding-bottom: 10px;
+    border-radius:10px;
+    background:white;
+    /* width:250px; */
+    height:50px;
+    display:inline-block;
+    overflow:none;
+    /* box-shadow:#dedede 7px 7px; */
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08), 
+              0 2px 2px rgba(0, 0, 0,0.08), 
+              0 4px 4px rgba(0,0,0,0.08), 
+              0 8px 8px rgba(0,0,0,0.08), 
+              0 16px 16px rgba(0,0,0,0.08), 
+              0 32px 32px rgba(0,0,0,0.08);
+    margin: 6px;
+  }
+  .cardsWho {
+    display:inline-block;
+    position:relative;
+    vertical-align:middle;
+    color:#444;
+    border:1px solid #CCC;
+    border-radius:15px;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    /* cursor:pointer; */
+    width: 280px;
+    height:120px;
+    padding-top: 35px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow:none;
+    margin: 8px;
+    padding-left:44px;
+  }
+  .cardsWho img {
+    float: left;
+    position:relative;
+    /* display:inline-block; */
+  }
+  .cardsWho p {
+    vertical-align:middle;
+    /* display:inline-block; */
+    padding-left:65px;
+    padding-top: 10px;
+    width:79.5%;
+  }
+  .cardsDo p {
+    text-align: center;
+    vertical-align:middle;
+  }
+  .cardDoRow {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    align-content: center;
+  }
+  #canbtn
+  {
+    display:none;
+  }
+}
+
+</style>
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<BODY link="grey" alink="grey" vlink="grey" onLoad="onresizer();">
+<div id="page-container">
+
+<!-- HEADER -->
+<div class="header0">
+<img src="logo.png" align="left" height="69.5px" ><img src="ae_logo.png" height="71.5px" align="right" ><br><br><br>
+</div>
+
+<div class="header1">
+<div id="mmheaderpart" style="clear:both;background:#61c5db;">
+<img style="margin-top:9px;margin-left:38px;" class="unselectable" src="logo.png" align="left" height="60px">
+<button onclick="openSidebar();" class="opensidebarbtn inline unselectable"><span> ☰</span></button>
+</div>
+<div id="mmmheaderpart" style="clear:both;background:#61c5db;"></div>
+<div id="mheaderpart" style="clear:both;background:#61c5db;">
+<img style="margin-top:9px;margin-left:38px;" src="mnavlogo.png" align="left" height="60px">
+<div onclick="closeSidebar()" class="closesidebarbtn inline unselectable"><span> X</span></div>
+<div id="msupernavi" style="background:#61c5db;margin-top:0%;margin-left:0%;"><br /><br><br><br>
+<div class="buttonpanell" style="padding-left:30%;clear:both;"><button class="onservices_button inline" onclick="location.href='services.html'" type="button">Online Services</button><button class="uaetourvisa_button inline" onclick="location.href='visa.html'" type="button">UAE Tourist Visa</button></div>
+<div class="mnavbar" style="padding-left:25px;clear:both;padding-right:25px;font-family:Dubai;"><br /><br />
+<a class="active" href=""><img src="home.png" height="28.5px" width="30px" valign="top"><font color="white">&ensp;&ensp;&ensp;HOME</font></a><br /><hr width="99.5%" color="white" />
+<a href="about.html"><img src="about.png" height="35px" width="28px" align="top"><font color="white">&ensp;&ensp;&ensp;ABOUT</font></a><br /><hr />
+<a href="services.html"><img src="services.png" height="28px" width="29px" align="top"><font color="white">&ensp;&ensp;&ensp;SERVICES</font></a><br /><hr />
+<a href="pricing.html"><img src="pricing.png" height="31.5px" align="top"><font color="white">&ensp;&ensp;&ensp;PRICING</font></a><br /><hr />
+<a href="faq.html"> <img src="faq.png" height="30px" align="top"><font color="white">&ensp;&ensp;&ensp;FAQ</font></a><br />
+</div><br /><br />
+</div>
+</div>
+</div>
+<!-- HEADER END -->
+
+
+<!-- NAVBAR -->
+<div id="supernavi">
+<div id="navbar">
+<a class="active" href=""><span class="navitxt">Home &ensp;&ensp;&ensp;</span></a>
+<a href="about.html"><span class="navitxt">About &ensp;&ensp;&ensp;</span></a>
+<a href="services.html"><span class="navitxt">Services &ensp;&ensp;&ensp;</span></a>
+<a href="pricing.html"><span class="navitxt">Pricing &ensp;&ensp;&ensp;</span></a>
+<a href="faq.html"><span>FAQ &ensp;&ensp;&ensp;</span></a>
+
+<div class="buttonpanel"><button class="onservices_button" onclick="location.href='services.html'" type="button">Online Services</button><button class="uaetourvisa_button" onclick="location.href='visa.html'" type="button">UAE Tourist Visa</button></div>
+
+</div>
+</div>
+
+<!-- msupernavi in header1 -->
+<!-- NAVBAR END -->
+
+
+<!-- THE CONTENT -->
+<div id="content">
+
+<div class="indeximgcontainer">
+<img src="./index_files/home.jpg" class="indexpic" />
+<div class="indexpictext">
+<H1 style="width:100%;"><font face="Dubai W23 Bold" color="black">Smart Amer Your Life Very Easy</font></h1><br />
+<div style="width:100%;border-left-style:solid;border-left-color:#33adff;padding-left:25px;font-family:Dubai;">Smart Amer will allow you to focus on your business. Amer247 the only government services center operating 24 hours in UAE.
+<div style="display:block;position:absolute;float:left;width:160%;">
+<br /><br /><a href="about.html" class="cta">
+<span>Read More</span>
+<svg width="13px" height="10px" viewBox="0 0 13 10">
+<path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="indeximgcontainer1">
+<img src="./index_files/home1.jpg" class="indexpic1" />
+<div class="indexpictext1">
+<H1 style="width:70%;"><font face="Dubai W23 Bold" color="black">Smart Amer Your Life Very Easy</font></h1><br />
+<div style="width:100%;border-left-style:solid;border-left-color:#33adff;padding-left:25px;font-family:Dubai W23 Bold;">Smart Amer will allow you to focus on your business. Amer247 the only government services center operating 24 hours in UAE.
+<div style="display:block;position:absolute;float:left;width:160%;">
+<br /><br /><a href="about.html" class="cta">
+<span>Read More</span>
+<svg width="13px" height="10px" viewBox="0 0 13 10">
+<path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+<br><BR><BR>
+<!-- WARNING DONT MODIFY HEADER, NAVBAR, PAGE-CONTAINER DIVS -->
+
+<!-- WHO WE ARE -->
+<div style="position:relative;clear:left;">
+<H2 class="whohding1"><font face="Dubai"><span style="border-bottom-style:solid;border-color:#33adff;padding-bottom:7px;">Wh</span>o We Are</font></h2><H2 class="whohding2"><font face="Dubai">Who We Are</font></h2>
+
+<div class="container">
+
+<div id="flexi">
+
+<div class="mwhoboxes col-md-6" style="font-family:Dubai;">
+<div class="module hoverstyle" style="color:#444;width:100%;border:1px solid #CCC;border-radius:15px;padding:0 0 5px 20px;word-wrap: break-word;box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);cursor:pointer;overflow:auto;" ><img style="margin-top:16px;" src="./index_files/icon1.jpg" width="42px" height="56px" align="left" style="position:relative;display:block;"><br><center>Immigration Services</center></div><br />
+<div class="module hoverstyle" style="color:#444;width:100%;border:1px solid #CCC;border-radius:15px;padding:0 0 5px 20px;word-wrap: break-word;box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);cursor:pointer;overflow:auto;" ><img style="margin-top:16px;" src="./index_files/icon2.jpg" height="49.5px" align="left" style="position:relative;display:block;"><br><center>Emirates Identity Authority</center></div><br />
+<div class="module hoverstyle" style="width:100%;color:#444;padding:0 0 5px 20px;word-wrap: break-word;border:1px solid #CCC;border-radius:15px;box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);cursor:pointer;overflow:auto;" ><img style="margin-top:16px;" src="./index_files/icon3.jpg" height="49.5px" align="left" style="position:relative;display:block;"><br><center>Medical Test Applications</center></div><br />
+<div class="module hoverstyle" style="width:100%;color:#444;padding:0 0 5px 20px;word-wrap: break-word;border:1px solid #CCC;border-radius:15px;box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);cursor:pointer;overflow:auto;" ><img style="margin-top:16px;" src="./index_files/icon4.png" height="49.5px" align="left" style="position:relative;display:block;"><br><center>Insurance</center></div><br />
+<br />
+</div>
+
+<div class="module whotxt "><br><p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+<p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p></div>
+
+</div>
+
+<div class="whoboxes unselectable ">
+  <div>
+  <div class="module hoverstyle cardsWho">
+    <img src="./index_files/icon1.jpg" height="55px"></img>
+    <p> Immigration Services</p></div>
+  
+  <div class="module hoverstyle cardsWho">
+    <img src="./index_files/icon2.jpg" height="55px">
+    </img><p>Emirates Identity Authority</p></div>
+  </div>
+  <div>
+  <div class="module hoverstyle cardsWho">
+  <img src="./index_files/icon3.jpg" height="55px">
+    </img><p>Medical Test Applications</p></div>
+  
+  <div class="module hoverstyle cardsWho">
+    <img src="./index_files/icon4.png" height="55px">
+    </img><p>Insurance</p></div>
+  </div>
+</div>
+</div>
+
+</div>
+<!-- WHO WE ARE END -->
+
+
+<!-- WHAT WE DO -->
+<div style="position:relative;clear:left;font-family:Dubai;font-size:11px;">
+  <H2 class="wwdhding0"><BR /><span style="border-bottom-style:solid;border-color:#33adff;padding-bottom:7px;">Wh</span>at We Do</h2><BR /><H2 class="wwdhding1">What We Do</h2>
+ <div style="display:block;margin-left:5%;margin-right:5%;width:90%;"> 
+  <div class="container cardDoRow">
+    <div class="cardsDo col-md-3"><p>AMER SERVICES</p></div>
+    <div class="cardsDo col-md-3"><p>MINISTRY OF EDUCATION</p></div>
+    <div class="cardsDo col-md-3"><p>ENTRY PERMITS</p></div>
+    <div class="cardsDo col-md-3"><p>DUBAI POLICE</p></div>
+    <div class="cardsDo col-md-3" id="canbtn" onclick="canbtn();" onclick="canbtn();" style="cursor:pointer;padding-left:50%;background:#61c5db;"><p><font color="white" size="3px"><B>&gt;</b></font></p></div>
+  </div>
+  <div class="container cardDoRow" id="can1">
+    <div class="cardsDo col-md-3"><p>EMIRATES IDENTITY AUTHORITY</p></div>
+    <div class="cardsDo col-md-3"><p>VAT SERVICES</p></div>
+    <div class="cardsDo col-md-3"><p>HEALTH INSURANCE SERVICES</p></div>
+    <div class="cardsDo col-md-3"><p>ROADS AND TRANSPORT AUTHORITY</p></div>
+    <div class="cardsDo col-md-3" id="canbtn1" onclick="canbtn1();" style="padding-left:50%;background:#61c5db;cursor:pointer;display:none;"><p><font color="white" size="3px"><B>&gt;</b></font></p></div>
+  </div>
+  <div class="container cardDoRow" id="can2">
+    <div class="cardsDo col-md-3"><p>PUBLIC PROSECUTION</p></div>
+    <div class="cardsDo col-md-3"><p>PENSION SERVICES</p></div>
+    <div class="cardsDo col-md-3"><p>DUBAI ECONOMY SERVICES</p></div>
+    <div class="cardsDo col-md-3"><p>MINISTRY OF COMMUNITY DEVELOPMENT</p></div>
+    <div class="cardsDo col-md-3" id="canbtn2" onclick="canbtn2();" style="cursor:pointer;padding-left:50%;background:#61c5db;display:none;"><p><font color="white" size="3px"><B>&gt;</b></font></p></div>
+  </div>
+  <div class="container cardDoRow" id="can3">
+    <div class="cardsDo col-md-3"><p>DUBAI MUNICIPALITY</p></div>
+    <div class="cardsDo col-md-3"><p>MEDICAL FITNESS APPLICATION</p></div>
+    <div class="cardsDo col-md-3"><p>DUBAI COURT</p></div>
+    <div class="cardsDo col-md-3"><p>COMPANY ESTABILISHMENT AND CLEARANCE</p></div>
+  </div>
+ </div>
+  
+  <br><br>
+  <br><br>
+  </div>
+<!-- WHAT WE DO END-->
+
+
+<!-- Pick and Drop -->
+<div class="pickndrop0">
+<H2 align="center"><U style="text-decoration-line:underline;text-decoration-color:#33adff;">Pi</u>ck And Drop Services<br><font face="Garamond" size="2px">Smart Amer provides free documents to pick and drop services</font></h2>
+<BR><BR>
+<div class="notAnimated animateBlock leftAlign left" style="width:50%;position:relative;left:0%;float:left;">
+<UL type="circle">
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse</li><br>
+<li>ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</li><br>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse</li><br>
+<li>ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</li><br>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</li><br>
+</ul></div>
+<div class="module" style="width:40%;height:100%;right:0%;float:right;">
+<img src="./index_files/pickdrop.png" height="390px" width="100%" />
+</div>
+</div>
+<br>
+
+<div class="pickndrop1">
+<H2 align="center"><U style="text-decoration-line:underline;text-decoration-color:#33adff;">Pi</u>ck And Drop Services<br><font face="Garamond" size="2px">Smart Amer provides free documents to pick and drop services</font></h2>
+<BR><BR>
+<div class="module" style="width:100%;height:100%;position:relative;">
+<center><img src="./index_files/pickdrop.png" height="344px" width="80%" /></center>
+</div><br />
+<div class="module" style="width:90%;position:relative;left:0;float:left;clear:both;">
+<UL type="circle">
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse</li><br>
+<li>ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</li><br>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse</li><br>
+<li>ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</li><br>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</li><br>
+</ul></div>
+<br><br>
+</div>
+<!-- Pick and Drop END -->
+
+
+<!-- Our Partners -->
+<div id="ourpartners0">
+<BR><BR>
+<BR><BR>
+<BR />
+<div style="position:relative;display:block;left:0%;width:100%;height:50%;">
+<H1 style="font:39px Dubai Light; text-align: center;"><B>Our Partners</b></h1>
+</div>
+<div class="container" style="justify-content: center;display: flex;">
+<div class="partnerlogo col-md-3"><img class="module" src="dha.png" style="padding-bottom: 10px;"></div>
+<div class="partnerlogo col-md-3"><img class="module" src="dubeco.png"/></div>
+<div class="partnerlogo col-md-3"><img class="module" src="faic.png"/></div>
+</div>
+</div>
+
+<div id="ourpartners1">
+<BR><BR>
+<BR><BR>
+<BR />
+<div style="position:relative; display:block; left:0%; width:100%;">
+<H1 style="font:29px Algerian; text-align: center;"><B>Our Partners</b></h1>
+<iframe style="border-style:none;" src="mpartners.html" width="100%" height="170px"></iframe>
+</div>
+<!-- Our Partners END -->
+
+
+</div>
+<!-- THE CONTENT END -->
+
+</div>
+<!-- END OF PAGE-CONTAINER -->
+
+
+<BR><BR>
+<br><br>
+
+
+<!-- THE FOOTER -->
+<div id="footer0" class="container-fluid" style="color:gray;">
+<div style="position:relative;width:31%;left:4.5%;float:left;padding:0px;line-height:16px;"><font face="Dubai Medium" size="3px"><BR><BR><BR>Smart Amer is a Semi Government Organization, which allows residents to complete all Visa and Residency transaction. Smart AmerCenters were launched by Dubai GDRFA to simplify transactions and increase effciency to achieve customer happiness.<BR><BR><BR><BR>
+<img src="mcardsealed.png" height="27px" width="48.5px" />&ensp;
+<img src="securecode.png" height="25px" width="48px" />&nbsp;
+<img src="visasealed.jpg" height="25px" width="43px" />&nbsp;
+<img src="visaverified.png" height="28px" width="48px" /><br><font face="Dubai" size="1.8px"><I>We accept payments online using Visa and MasterCard credit/debit card.</i></font>
+<BR><BR></div>
+<div style="position:relative;left:10%;width:40%;float:left;">
+<BR><BR>
+<table class="unselectable" width="160%">
+<tr style="font-family:Dubai;font-size:12px;">
+<td width="50%">&ensp;&ensp;<img src="tele.png" height="35px" width="31px"/>&nbsp;&nbsp;04 265 8666,052 781 8802&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+<td width="80%"><img src="locat.png" height="35px" width="31px" align="center" /> Dubai, United Arab Emirates&ensp;&ensp; </td>
+</tr>
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+<tr style="font-family:Dubai;font-size:14px;">
+<td width="50%">&nbsp;&nbsp;<img src="mail.png" height="40px" width="41px" align="center" />contact@smartamer.ae </td>
+<td width="80%"><img src="fb.png" height="37px" width="32px" align="center"  /> <img src="insta.png" height="37px" width="32px" align="center" /></td>
+</tr>
+</table><br /><br /><BR>
+<table class="unselectable" style="font-family:Dubai Medium;font-size:15px;">
+<tr>
+<td><a href="privpolicy.html"><font color="gray">Privacy Policy</font></a> &ensp;&ensp;&ensp;&ensp;</td>
+<td><a href="refpolicy.html"><font color="gray">Refund Policy</font></a> &ensp;&ensp;&ensp;&ensp;&ensp;</td>
+<td><a href="tos.html"><font color="gray">Terms and Conditions</font></a> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+<td><a href="careers.html"><font color="gray">Careers</font></a> &ensp;&ensp;&ensp;&ensp;&ensp;</td>
+<td><a href="contact.html"><font color="gray">Contact</font></a> &ensp;&ensp;&ensp;</td>
+</tr>
+</table>
+</div>
+<div style="position:relative;display:block;clear:both;">
+<br /><br />
+<img align="left" style="position:relative;left:4%;" src="whatsapp.png" height="60px" width="64px" />
+<img align="right" style="position:relative;right:8%;" src="msg.png" height="67px" width="68px" />
+<span style="margin-left:28%;"><font face="Dubai" size="3px">Copyright &copy;Rooh Al Ethid 2021 All Rights Reserved.</font></span>
+</div>
+<br><br><br /><br />
+</div>
+
+<div id="footer1" class="container-fluid">
+<div style="position:relative;width:90%;left:5%;float:left;font-family:Dubai;color:grey;font-weight:500;" size="2px"><BR><BR><BR /><p align="justify">Smart Amer is a Semi Government Organization, which allows residents to complete all Visa and Residency transaction. Smart AmerCenters were launched by Dubai GDRFA to simplify transactions and increase effciency to achieve customer happiness.</p>
+<BR><BR>
+</div>
+<div style="position:relative;left:13%;width:70%;float:left;clear:both;font-family:Dubai W23 Bold;font-size:14px;color:grey;">
+<center>
+&ensp;<img src="tele.png" height="36px" width="33px"/><br>04 265 8666,052 781 8802<br>
+<br />&ensp;<img src="mail.png" height="43px" width="44px" align="center" /><br>contact@smartamer.ae<br>
+<br />&ensp;<img src="locat.png" height="41px" width="37px" align="center" /><br> Dubai, United Arab Emirates<br>
+<br /><br />&ensp;&ensp; <img src="mfb.png" height="40px" width="37px" align="center"  /> <img src="minsta.png" height="40px" width="38px" align="center" /><br />
+<br></center>
+</div>
+<div style="position:relative;clear:both;"><BR>
+<table class="unselectable" style="font-family:Dubai Medium;font-size:15px;">
+<tr>
+<td><a href="privpolicy.html"><font color="gray">Privacy Policy</font></a></td>
+<td><a href="refpolicy.html"><font color="gray">Refund Policy</font></a></td>
+</tr>
+<tr>
+<td><a href="tos.html"><font color="gray">Terms and Conditions</font></a> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+<td><a href="careers.html"><font color="gray">Careers</font></a></td>
+</tr>
+<tr><td><a href="contact.html"><font color="gray">Contact</font></a> &ensp;&ensp;&ensp;</td></tr>
+</tr>
+</table>
+</div>
+<br /><br>
+<div style="position:relative;display:block;clear:both;">
+<center>
+<img src="mcardsealed.png" height="27px" width="48.5px" />&ensp;
+<img src="securecode.png" height="25px" width="48px" />&ensp;
+<img src="visasealed.jpg" height="25px" width="43px" />&ensp;
+<img src="visaverified.png" height="28px" width="48px" /><br>
+<font face="Dubai W23 Regular" size="1.8px"><I>We accept payments online using Visa and MasterCard credit/debit card.</i></font>
+</center>
+</div>
+<div style="position:relative;clear:both;"><BR>
+<center><img style="position:relative;" src="whatsapp.png" height="47px" width="48.5px" /> <img style="position:relative;" src="msg.png" height="50px" width="51px" /></center>
+</div><BR>
+<div style="position:relative;clear:both;padding-top:12px;padding-bottom:10px;background:#ffffff;margin-left:-100%;margin-right:-100%;width:auto;">
+<font face="Dubai" size="1px"><center>Copyright &copy;smartamer 2021 All Rights Reserved.</center></font>
+</div>
+</div>
+
+<div id="whatsapp">
+<img align="right" src="whatsapp.png" height="67px" width="68.5px" />
+</div>
+<!-- THE FOOTER END -->
+
+
+<script type="text/javascript" src="script.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.0.js"></script>
+
+<script>
+$(function() {
+  var $elements = $('.animateBlock.notAnimated'); //contains elements of nonAnimated class
+  var $window = $(window);
+  $window.on('scroll', function(e) {
+    $elements.each(function(i, elem) { //loop through each element
+      if ($(this).hasClass('animated')) // check if already animated
+        return;
+      animateMe($(this));
+    });
+  });
+});
+ 
+function animateMe(elem) {
+  var winTop = $(window).scrollTop(); // calculate distance from top of window
+  var winBottom = winTop + $(window).height();
+  var elemTop = $(elem).offset().top; // element distance from top of page
+  var elemBottom = elemTop + $(elem).height();
+  if ((elemBottom <= winBottom) && (elemTop >= winTop)) {
+    // exchange classes if element visible
+    $(elem).removeClass('notAnimated').addClass('animated');
+  }
+}
+</script>
+
+<script>
+function canbtn()
+{
+  document.getElementById("can1").style.display = "block";
+  document.getElementById("canbtn1").style.display = "block";
+  document.getElementById("canbtn").style.display = "none";
+}
+
+function canbtn1()
+{
+  document.getElementById("can2").style.display = "block";
+  document.getElementById("canbtn2").style.display = "block";
+  document.getElementById("canbtn1").style.display = "none";
+}
+
+function canbtn2()
+{
+  document.getElementById("can3").style.display = "block";
+  document.getElementById("canbtn2").style.display = "none";
+}
+</script>
+
+<script>
+function onresizer()
+{
+$(window).resize( function() {
+
+window.location.href = window.location.href;
+
+});
+}
+</script>
+
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script id="rendered-js" >
+(function ($) {
+
+
+  $.fn.visible = function (partial) {
+
+    var $t = $(this),
+    $w = $(window),
+    viewTop = $w.scrollTop(),
+    viewBottom = viewTop + $w.height(),
+    _top = $t.offset().top,
+    _bottom = _top + $t.height(),
+    compareTop = partial === true ? _bottom : _top,
+    compareBottom = partial === true ? _top : _bottom;
+
+    return compareBottom <= viewBottom && compareTop >= viewTop;
+
+  };
+
+})(jQuery);
+
+var win = $(window);
+
+var allMods = $(".module");
+
+allMods.each(function (i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("already-visible");
+  }
+});
+
+win.scroll(function (event) {
+
+  allMods.each(function (i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("come-in");
+    }
+  });
+
+});
+//# sourceURL=pen.js
+</script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
+
+</body>
+</html>

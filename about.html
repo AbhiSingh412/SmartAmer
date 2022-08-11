@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<TITLE></title>
+<meta name="viewport" content= "width=device-width, user-scalable=no" initial-scale="1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<style>
+
+/* Media Queries for Smartphones */
+@media only screen and (max-width: 768px) {
+  .smartdubai {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    clear:both;
+  }
+  .smartdubaitxt {
+    top:5em;
+    width:90%;
+    display:block;
+    -webkit-order:2;
+    -moz-order:2;
+    -o-order:2;
+    -khtml-order:2;
+    order:2;
+    margin-left:5%;
+  }
+  .smartdubaipic {
+    -webkit-order:1;
+    -moz-order:1;
+    -o-order:1;
+    -khtml-order:1;
+    order:1;
+    width:auto;
+    display:block;
+    clear:left;
+    height:270px;
+  }
+  .smartdubaihding1 {
+    display:none;
+  }
+  .smartservices {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    clear:both;
+  }
+  .smartservicestxt {
+    width:90%;
+    display:block;
+    margin-left:5%;
+  }
+  .smartservicesimg {
+    width:auto;
+    display:block;
+    clear:left;
+    height:270px;
+  }
+  .smartserviceshding1 {
+    display:none;
+  }
+  .objective tr{
+    display: flex;
+    flex-direction: column;
+  }
+  .objective {
+    display: flex;
+    margin-left:4%;
+    flex-direction: column;
+    cellspacing:15;
+    cellpadding:15;
+  }
+  .objective td{
+    border: 1px;
+    border-style:none;
+    width:auto;
+    left:1%;
+    margin-top:5px;
+    border-radius:15px;
+    border-bottom-style:solid;
+  }
+}
+
+/* Media Queries for Tablet/Phablet/iPads in Landscape Mode */
+@media only screen and (min-width : 769px) and (max-width : 1024px) and (orientation : landscape) {
+  .smartdubai {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    clear:both;
+  }
+  .smartdubaitxt {
+    top:5em;
+    width:90%;
+    display:block;
+    -webkit-order:2;
+    -moz-order:2;
+    -o-order:2;
+    -khtml-order:2;
+    order:2;
+    margin-left:5%;
+  }
+  .smartdubaipic {
+    -webkit-order:1;
+    -moz-order:1;
+    -o-order:1;
+    -khtml-order:1;
+    order:1;
+    width:auto;
+    display:block;
+    clear:left;
+    height:270px;
+  }
+  .smartdubaihding1 {
+    display:none;
+  }
+  .smartservices {
+    position:relative;
+    clear:both;
+  }
+  .smartservicestxt {
+    width:90%;
+    display:block;
+    margin-left:5%;
+  }
+  .smartservicesimg {
+    width:auto;
+    display:block;
+    clear:left;
+    height:270px;
+  }
+  .smartserviceshding1 {
+    display:none;
+  }
+}
+
+/* Media Queries for Tablet/iPads in Portrait Mode */
+@media only screen and (min-width : 769px) and (max-width : 1024px) and (orientation : portrait) {
+  .smartdubai {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    clear:both;
+  }
+  .smartdubaitxt {
+    top:5em;
+    width:90%;
+    display:block;
+    -webkit-order:2;
+    -moz-order:2;
+    -o-order:2;
+    -khtml-order:2;
+    order:2;
+    margin-left:5%;
+  }
+  .smartdubaipic {
+    -webkit-order:1;
+    -moz-order:1;
+    -o-order:1;
+    -khtml-order:1;
+    order:1;
+    width:auto;
+    display:block;
+    clear:left;
+    height:270px;
+  }
+  .smartdubaihding1 {
+    display:none;
+  }
+  .smartservices {
+    position:relative;
+    clear:both;
+  }
+  .smartservicestxt {
+    width:90%;
+    display:block;
+    margin-left:5%;
+  }
+  .smartservicesimg {
+    width:auto;
+    display:block;
+    clear:left;
+    height:270px;
+  }
+  .smartserviceshding1 {
+    display:none;
+  }
+  .objective tr{
+    display: flex;
+    flex-direction: column;
+  }
+  .objective {
+    display: flex;
+    margin-left:4%;
+    flex-direction: column;
+    cellspacing:15;
+    cellpadding:15;
+  }
+  .objective td{
+    border: 1px;
+    border-style:none;
+    width:auto;
+    left:1%;
+    margin-top:5px;
+    border-radius:15px;
+    border-bottom-style:solid;
+  }
+}
+
+/* Media Queries for High-Pixel-Smaller-Screen QHD/4K displays like Larger Palmtop/Macbook/Convertible laptops */
+@media only screen and (min-width : 1025px) and (max-width : 1224px) {
+  .smartdubai
+  {
+    position:relative;
+    display:block;
+    clear:both; 
+  }
+  .smartdubaitxt
+  {
+    position:relative;
+    float:left;
+    display:block;
+    width:50%;
+    height:auto;
+    padding-right:5%;
+  }
+  .smartdubaipic
+  {
+    position:relative;
+    float:right;
+    right:0%;
+    width:50%;
+    height:300px;
+  }
+  .smartdubaihding2 {
+    display:none;
+  }
+  .smartservices
+  {
+    position:relative;
+    display:block;
+    clear:both; 
+  }
+  .smartservicestxt
+  {
+    position:relative;
+    float:left;
+    display:block;
+    width:45%;
+    height:auto;
+    padding-left:5%;
+  }
+  .smartservicespic
+  {
+    position:relative;
+    float:left;
+    width:50%;
+    height:287px;
+  }
+  .smartserviceshding2 {
+    display:none;
+  }
+  .objective {
+    margin-top:23px;
+  }
+}
+
+/* Media Queries for Desktop/Laptops */
+@media only screen and (min-width : 1225px) {
+  .smartdubai
+  {
+    position:relative;
+    display:block;
+    clear:both; 
+  }
+  .objective {
+    margin-top:26px;
+  }
+  .smartdubaitxt
+  {
+    position:relative;
+    float:left;
+    display:block;
+    width:50%;
+    height:auto;
+    padding-right:5%;
+  }
+  .smartdubaipic
+  {
+    position:relative;
+    float:right;
+    width:50%;
+    height:300px;
+  }
+  .smartdubaihding2 {
+    display:none;
+  }
+  .smartservices
+  {
+    position:relative;
+    display:block;
+    clear:both; 
+  }
+  .smartservicestxt
+  {
+    position:relative;
+    float:left;
+    display:block;
+    width:45%;
+    height:auto;
+    padding-left:5%;
+  }
+  .smartservicespic
+  {
+    position:relative;
+    float:left;
+    width:50%;
+    height:287px;
+  }
+  .smartserviceshding2 {
+    display:none;
+  }
+}
+
+</style>
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<BODY link="grey" alink="grey" vlink="grey" onLoad="onresizer();">
+<div id="page-container">
+
+<!-- HEADER -->
+<div class="header0">
+<img src="logo.png" align="left" height="69.5px" ><img src="ae_logo.png" height="71.5px" align="right" ><br><br><br>
+</div>
+
+<div class="header1">
+<div id="mmheaderpart" style="clear:both;background:#61c5db;">
+<img style="margin-top:9px;margin-left:38px;" class="unselectable" src="logo.png" align="left" height="60px">
+<button onclick="openSidebar();" class="opensidebarbtn inline unselectable"><span> ☰</span></button>
+</div>
+<div id="mmmheaderpart" style="clear:both;background:#61c5db;"></div>
+<div id="mheaderpart" style="clear:both;background:#61c5db;">
+<img style="margin-top:9px;margin-left:38px;" src="mnavlogo.png" align="left" height="60px">
+<div onclick="closeSidebar()" class="closesidebarbtn inline unselectable"><span> X</span></div>
+<div id="msupernavi" style="background:#61c5db;margin-top:0%;margin-left:0%;"><br /><br><br><br>
+<div class="buttonpanell" style="padding-left:30%;clear:both;"><button class="onservices_button inline" onclick="location.href='services.html'" type="button">Online Services</button><button class="uaetourvisa_button inline" onclick="location.href='visa.html'" type="button">UAE Tourist Visa</button></div>
+<div class="mnavbar" style="padding-left:25px;clear:both;padding-right:25px;font-family:Dubai;"><br /><br />
+<a class="active" href=""><img src="home.png" height="28.5px" width="30px" valign="top"><font color="white">&ensp;&ensp;&ensp;HOME</font></a><br /><hr width="99.5%" color="white" />
+<a href="about.html"><img src="about.png" height="35px" width="28px" align="top"><font color="white">&ensp;&ensp;&ensp;ABOUT</font></a><br /><hr />
+<a href="services.html"><img src="services.png" height="28px" width="29px" align="top"><font color="white">&ensp;&ensp;&ensp;SERVICES</font></a><br /><hr />
+<a href="pricing.html"><img src="pricing.png" height="31.5px" align="top"><font color="white">&ensp;&ensp;&ensp;PRICING</font></a><br /><hr />
+<a href="faq.html"> <img src="faq.png" height="30px" align="top"><font color="white">&ensp;&ensp;&ensp;FAQ</font></a><br />
+</div><br /><br />
+</div>
+</div>
+</div>
+<!-- HEADER END -->
+
+<!-- NAVBAR -->
+<div id="supernavi">
+<div id="navbar">
+<a class="active" href=""><span class="navitxt">Home &ensp;&ensp;&ensp;</span></a>
+<a href="about.html"><span class="navitxt">About &ensp;&ensp;&ensp;</span></a>
+<a href="services.html"><span class="navitxt">Services &ensp;&ensp;&ensp;</span></a>
+<a href="pricing.html"><span class="navitxt">Pricing &ensp;&ensp;&ensp;</span></a>
+<a href="faq.html"><span>FAQ &ensp;&ensp;&ensp;</span></a>
+
+<div class="buttonpanel"><button class="onservices_button" onclick="location.href='services.html'" type="button">Online Services</button><button class="uaetourvisa_button" onclick="location.href='visa.html'" type="button">UAE Tourist Visa</button></div>
+
+</div>
+</div>
+
+<!-- msupernavi in header1 -->
+<!-- NAVBAR END -->
+
+
+<!-- THE CONTENT -->
+<div id="content">
+
+<div id="mainpic">
+<img src="./about_files/about.jpg" class="mainpic" />
+<BR><BR><BR><br>
+</div>
+<!-- WARNING DONT MODIFY HEADER, NAVBAR, PAGE-CONTAINER DIVS -->
+
+<!-- SMART DUBAI -->
+<div class="smartdubai">
+<div class="notAnimated animateBlock leftAlign left smartdubaitxt">
+<span class="smartdubaihding1"><H1><font face="Helvetica "><span style="border-bottom-style:solid;border-color:#33adff;padding-bottom:7px;">Sm</span>art Dubai</font></h1></span><br />
+<p align="justify" style="font-family:Times New Roman;font-size:14px;font-style:italic;">is a Semi-Government Organization which allows residents to complete all Visa and Residency Transaction.</p>
+<p align="justify" style="font-family:Times New Roman;font-size:14px;font-style:italic;">Smart Dubai Center Was established in 2017 in collaboration with the General Directorate of Residency and Foreigners Affairs and the experience was a direct application of the strategy of the Federal Government advocated by His Highness Sheikh Mohammed bin Rashid Al Maktoum, Prime Minister and Ruler of Dubai.</p>
+<p align="justify" style="font-family:Times New Roman;font-size:14px;font-style:italic;">Smart Amer is a Semi Government Organization, which allows residents to complete all Visa and Residency transaction. Smart AmerCenters were launched by Dubai GDRFA to simplify transactions and increase effciency to achieve customer happiness.</p></div>
+
+<div class="module smartdubaipic">
+<span class="smartdubaihding2"><H1 align="center"><font face="Helvetica "><span style="border-bottom-style:solid;border-color:#33adff;padding-bottom:7px;">Sm</span>art Dubai</font></h1></span>
+<img src="./about_files/city.jpg" height="300px" width="100%" />
+</div>
+</div>
+<!-- SMART DUBAI END -->
+
+
+<br><br>
+<br><br>
+<br><br>
+
+
+<!-- SMART SERVICES -->
+<div class="smartservices">
+<div class="module smartservicespic">
+<span class="smartserviceshding2"><H1 align="center"><font face="Helvetica "><span style="border-bottom-style:solid;border-color:#33adff;padding-bottom:7px;">Sm</span>art Services</font></h1></span>
+<img src="./about_files/model.jpg" height="286px" width="100%" />
+</div>
+
+<div class="notAnimated animateBlock leftAlign left smartservicestxt">
+<span class="smartserviceshding1"><H1><font face="Helvetica "><span style="border-bottom-style:solid;border-color:#33adff;padding-bottom:7px;">Sm</span>art Services</font></h1></span><br />
+<p align="justify" style="font-family:Times New Roman;font-size:14px;font-style:italic;">provides services ranging from issuing entry permits, issuing and renewals of a residency visa, visa cancellation and other related services provided by other Government institutions and departments.</p>
+<p align="justify" style="font-family:Times New Roman;font-size:14px;font-style:italic;">The introduction of the private sector as a strategic partner of the various Government ministries and sectors to provide Government and federal services and raise the level of customer satisfaction. It catered to the idea of establishing service centers of specialized services, in cooperation with the private sector to accomplish all Government department and federal transactions. </p></div>
+
+</div>
+<!-- SMART SERVICES END -->
+
+
+
+<!-- Objective -->
+<div style="position:relative;display:box;clear:both;padding:0 32px 0 0;">
+<table class="objective" width="auto">
+<tr>
+<td width="30%" height="100%" class="module" style="box-shadow:#b3b3b3 18px 1px 16px;position:relative;background:#f2f2f2;border-radius:15px;opacity:0.8;">
+<span><H1><font face="Helvetica "><span style="border-bottom-style:solid;margin-left:17px;border-color:#33adff;padding-bottom:7px;">Ho</span>w we are special</font></h1></span><br />
+<div style="position:relative;left:5%;width:80%;font-family:Times New Roman;font-size:15px;font-style:italic;"><UL>
+<li>Amer 24/7 is the first and only center available 24/7 to assist you with our services</li><BR>
+<li>We have two branches: Deira (behind Abu Baker Al Siddique Metro Station), JLT (One JLT Building)</li><BR>
+<li>We have special offer for companies.</li><BR>
+<li>Collection and delivery of the transactions within the same day.</li><BR>
+<li>Complete the transactions at the earliest possible time; subject to approval.</li><BR>
+<li>Fast turn around and delivery time.</li><BR>
+</ul></div>
+</td>
+<td width="30%" height="100%" class="module" style="box-shadow:#b3b3b3 1px 1px 16px;position:relative;left:1%;background:#f2f2f2;clear:both;border-radius:15px;opacity:0.8;">
+<span><H1><font face="Helvetica "><span style="border-bottom-style:solid;border-color:#33adff;padding-bottom:7px;margin-left:17px;">Ou</span>r objective</font></h1></span><br />
+<div style="position:relative;left:10%;width:80%;font-family:Times New Roman;font-size:15px;font-style:italic;">
+Our aim is to make your life easy and allow you to focus on your business.
+<br><br><br>
+<img src="./about_files/time.jpg" height="39px" width="39px" align="center" /> We Care About Your Valuable Time.<br><br>
+<img src="./about_files/sats.jpg" height="39px" width="39px" align="center" /> We Care About Your Satisfaction.<br><br>
+<img src="./about_files/effort.png" height="39px" width="39px" align="center" /> We Put All Our Effort And Experience To Give You Satisfaction.
+<br><br /><br><br />
+</div>
+</td>
+</tr>
+</table>
+</div>
+<!-- Objective END -->
+
+
+<!-- Our Partners -->
+<div id="ourpartners0">
+<BR><BR>
+<BR><BR>
+<BR />
+<div style="position:relative;display:block;left:0%;width:100%;height:50%;">
+<H1 style="font:39px Dubai Light; text-align: center;"><B>Our Partners</b></h1>
+</div>
+<div class="container" style="justify-content: center;display: flex;">
+<div class="partnerlogo col-md-3"><img class="module" src="dha.png" style="padding-bottom: 10px;"></div>
+<div class="partnerlogo col-md-3"><img class="module" src="dubeco.png"/></div>
+<div class="partnerlogo col-md-3"><img class="module" src="faic.png"/></div>
+</div>
+</div>
+
+<div id="ourpartners1">
+<BR><BR>
+<BR><BR>
+<BR />
+<div style="position:relative; display:block; left:0%; width:100%;">
+<H1 style="font:29px Algerian; text-align: center;"><B>Our Partners</b></h1>
+<iframe style="border-style:none;" src="mpartners.html" width="100%" height="170px"></iframe>
+</div>
+<!-- Our Partners END -->
+
+
+</div>
+<!-- THE CONTENT END -->
+
+</div>
+<!-- END OF PAGE-CONTAINER -->
+
+
+<BR><BR>
+<br><br>
+
+
+<!-- THE FOOTER -->
+<div id="footer0" class="container-fluid" style="color:gray;">
+<div style="position:relative;width:31%;left:4.5%;float:left;padding:0px;line-height:16px;"><font face="Dubai Medium" size="3px"><BR><BR><BR>Smart Amer is a Semi Government Organization, which allows residents to complete all Visa and Residency transaction. Smart AmerCenters were launched by Dubai GDRFA to simplify transactions and increase effciency to achieve customer happiness.<BR><BR><BR><BR>
+<img src="mcardsealed.png" height="27px" width="48.5px" />&ensp;
+<img src="securecode.png" height="25px" width="48px" />&nbsp;
+<img src="visasealed.jpg" height="25px" width="43px" />&nbsp;
+<img src="visaverified.png" height="28px" width="48px" /><br><font face="Dubai" size="1.8px"><I>We accept payments online using Visa and MasterCard credit/debit card.</i></font>
+<BR><BR></div>
+<div style="position:relative;left:10%;width:40%;float:left;">
+<BR><BR>
+<table class="unselectable" width="160%">
+<tr style="font-family:Dubai;font-size:12px;">
+<td width="50%">&ensp;&ensp;<img src="tele.png" height="35px" width="31px"/>&nbsp;&nbsp;04 265 8666,052 781 8802&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+<td width="80%"><img src="locat.png" height="35px" width="31px" align="center" /> Dubai, United Arab Emirates&ensp;&ensp; </td>
+</tr>
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+<tr style="font-family:Dubai;font-size:14px;">
+<td width="50%">&nbsp;&nbsp;<img src="mail.png" height="40px" width="41px" align="center" />contact@smartamer.ae </td>
+<td width="80%"><img src="fb.png" height="37px" width="32px" align="center"  /> <img src="insta.png" height="37px" width="32px" align="center" /></td>
+</tr>
+</table><br /><br /><BR>
+<table class="unselectable" style="font-family:Dubai Medium;font-size:15px;">
+<tr>
+<td><a href="privpolicy.html"><font color="gray">Privacy Policy</font></a> &ensp;&ensp;&ensp;&ensp;</td>
+<td><a href="refpolicy.html"><font color="gray">Refund Policy</font></a> &ensp;&ensp;&ensp;&ensp;&ensp;</td>
+<td><a href="tos.html"><font color="gray">Terms and Conditions</font></a> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+<td><a href="careers.html"><font color="gray">Careers</font></a> &ensp;&ensp;&ensp;&ensp;&ensp;</td>
+<td><a href="contact.html"><font color="gray">Contact</font></a> &ensp;&ensp;&ensp;</td>
+</tr>
+</table>
+</div>
+<div style="position:relative;display:block;clear:both;">
+<br /><br />
+<img align="left" style="position:relative;left:4%;" src="whatsapp.png" height="60px" width="64px" />
+<img align="right" style="position:relative;right:8%;" src="msg.png" height="67px" width="68px" />
+<span style="margin-left:28%;"><font face="Dubai" size="3px">Copyright &copy;Rooh Al Ethid 2021 All Rights Reserved.</font></span>
+</div>
+<br><br><br /><br />
+</div>
+
+<div id="footer1" class="container-fluid">
+<div style="position:relative;width:90%;left:5%;float:left;font-family:Dubai;color:grey;font-weight:500;" size="2px"><BR><BR><BR /><p align="justify">Smart Amer is a Semi Government Organization, which allows residents to complete all Visa and Residency transaction. Smart AmerCenters were launched by Dubai GDRFA to simplify transactions and increase effciency to achieve customer happiness.</p>
+<BR><BR>
+</div>
+<div style="position:relative;left:13%;width:70%;float:left;clear:both;font-family:Dubai W23 Bold;font-size:14px;color:grey;">
+<center>
+&ensp;<img src="tele.png" height="36px" width="33px"/><br>04 265 8666,052 781 8802<br>
+<br />&ensp;<img src="mail.png" height="43px" width="44px" align="center" /><br>contact@smartamer.ae<br>
+<br />&ensp;<img src="locat.png" height="41px" width="37px" align="center" /><br> Dubai, United Arab Emirates<br>
+<br /><br />&ensp;&ensp; <img src="mfb.png" height="40px" width="37px" align="center"  /> <img src="minsta.png" height="40px" width="38px" align="center" /><br />
+<br></center>
+</div>
+<div style="position:relative;clear:both;"><BR>
+<table class="unselectable" style="font-family:Dubai Medium;font-size:15px;">
+<tr>
+<td><a href="privpolicy.html"><font color="gray">Privacy Policy</font></a></td>
+<td><a href="refpolicy.html"><font color="gray">Refund Policy</font></a></td>
+</tr>
+<tr>
+<td><a href="tos.html"><font color="gray">Terms and Conditions</font></a> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+<td><a href="careers.html"><font color="gray">Careers</font></a></td>
+</tr>
+<tr><td><a href="contact.html"><font color="gray">Contact</font></a> &ensp;&ensp;&ensp;</td></tr>
+</tr>
+</table>
+</div>
+<br /><br>
+<div style="position:relative;display:block;clear:both;">
+<center>
+<img src="mcardsealed.png" height="27px" width="48.5px" />&ensp;
+<img src="securecode.png" height="25px" width="48px" />&ensp;
+<img src="visasealed.jpg" height="25px" width="43px" />&ensp;
+<img src="visaverified.png" height="28px" width="48px" /><br>
+<font face="Dubai W23 Regular" size="1.8px"><I>We accept payments online using Visa and MasterCard credit/debit card.</i></font>
+</center>
+</div>
+<div style="position:relative;clear:both;"><BR>
+<center><img style="position:relative;" src="whatsapp.png" height="47px" width="48.5px" /> <img style="position:relative;" src="msg.png" height="50px" width="51px" /></center>
+</div><BR>
+<div style="position:relative;clear:both;padding-top:12px;padding-bottom:10px;background:#ffffff;margin-left:-100%;margin-right:-100%;width:auto;">
+<font face="Dubai" size="1px"><center>Copyright &copy;smartamer 2021 All Rights Reserved.</center></font>
+</div>
+</div>
+
+<div id="whatsapp">
+<img align="right" src="whatsapp.png" height="67px" width="68.5px" />
+</div>
+<!-- THE FOOTER END -->
+
+
+<script type="text/javascript" src="script.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.0.js"></script>
+<script>
+$(function() {
+  var $elements = $('.animateBlock.notAnimated'); //contains elements of nonAnimated class
+  var $window = $(window);
+  $window.on('scroll', function(e) {
+    $elements.each(function(i, elem) { //loop through each element
+      if ($(this).hasClass('animated')) // check if already animated
+        return;
+      animateMe($(this));
+    });
+  });
+});
+ 
+function animateMe(elem) {
+  var winTop = $(window).scrollTop(); // calculate distance from top of window
+  var winBottom = winTop + $(window).height();
+  var elemTop = $(elem).offset().top; // element distance from top of page
+  var elemBottom = elemTop + $(elem).height();
+  if ((elemBottom <= winBottom) && (elemTop >= winTop)) {
+    // exchange classes if element visible
+    $(elem).removeClass('notAnimated').addClass('animated');
+  }
+}
+</script>
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+      <script id="rendered-js" >
+(function ($) {
+
+
+  $.fn.visible = function (partial) {
+
+    var $t = $(this),
+    $w = $(window),
+    viewTop = $w.scrollTop(),
+    viewBottom = viewTop + $w.height(),
+    _top = $t.offset().top,
+    _bottom = _top + $t.height(),
+    compareTop = partial === true ? _bottom : _top,
+    compareBottom = partial === true ? _top : _bottom;
+
+    return compareBottom <= viewBottom && compareTop >= viewTop;
+
+  };
+
+})(jQuery);
+
+var win = $(window);
+
+var allMods = $(".module");
+
+allMods.each(function (i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("already-visible");
+  }
+});
+
+win.scroll(function (event) {
+
+  allMods.each(function (i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("come-in");
+    }
+  });
+
+});
+//# sourceURL=pen.js
+</script>
+  
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
+
+</body>
+</html>
